@@ -16,19 +16,22 @@ bot.start(getUserData, async (ctx) => {
 
     await ctx.reply(`${ctx._user.first_name}, Welcome to the new Galaxy of Satellite.army!`)
     await ctx.reply(`We are working on a DeFi wallet tracker to help you to manage your crypto investments into Solana world!`)
-    await ctx.reply(`Stay tuned! We are partecipating to SOLANA Season https://solana.com/solanaszn`)
+    await ctx.reply(`Stay tuned! We are partecipating to SOLANA Season Hackathon https://solana.com/solanaszn`)
 
 })
 
-bot.on('text', getUserData, (ctx, next) => {
+bot.on('text', getUserData, async (ctx, next) => {
     // console.log({ M: ctx.message })
     // Explicit usage
     // ctx.telegram.sendMessage(ctx.message.chat.id, `Hello ${ctx._user.first_name}`)
+    if (ctx.message.text.includes('scam')) {
+        await ctx.reply(`${ctx._user.first_name}, I'm not a scam!`)
+        return next()
+    }
 
     // Using context shortcut
     console.log({ u: ctx._user, m: ctx.message })
-    ctx.reply(`Hello ${ctx._user.first_name}`)
-    ctx.reply(`Soon here a lot of functions for you!`)
+    await ctx.reply(`${ctx._user.first_name}, soon a lot of functions for you!`)
     next()
 }, (ctx) => { console.log(ctx._name) })
 
