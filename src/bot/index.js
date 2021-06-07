@@ -24,6 +24,26 @@ bot.on('text', getUserData, async (ctx, next) => {
         return next()
     }
 
+    if (ctx.message.text.toLowerCase().includes('positive price sample alert')) {
+        await ctx.reply("SOL token has just passed 40$ value!")
+        return next()
+    }
+
+    if (ctx.message.text.toLowerCase().includes('negative price sample alert')) {
+        await ctx.reply("SOL token has just fallen below the 40$ value!")
+        return next()
+    }
+
+    if (ctx.message.text.toLowerCase().includes('IL sample alert')) {
+        await ctx.reply("SOL/RAY pool currently has 1% of IL!")
+        return next()
+    }
+
+    if (ctx.message.text.toLowerCase().includes('security sample alert')) {
+        await ctx.reply("scam.xyz pool has been compromised! Withdraw your funds!")
+        return next()
+    }
+    
     // Using context shortcut
     console.log({ u: ctx._user, m: ctx.message })
     await ctx.reply(`${ctx._user.first_name}, soon a lot of functions for you!`)
