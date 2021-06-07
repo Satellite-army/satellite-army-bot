@@ -46,7 +46,7 @@ bot.on('text', getUserData, async (ctx, next) => {
 
     if (ctx.message.text.toLowerCase().includes('welcome sample')) {
         await ctx.reply("Welcome! This is the satellite.army bot.")
-        await ctx.reply("You have setup 1 Impermanent Loss alert.")
+        await ctx.reply("You have setup 1 security alert.")
         return next()
     }
 
