@@ -50,7 +50,7 @@ bot.on('text', getUserData, async (ctx, next) => {
         return next()
     }
 
-    if (ctx.message.text.toLowerCase().includes('RAY/SOL 1%')) {
+    if (ctx.message.text.toLowerCase().includes('ray/sol 1%')) {
         await ctx.reply("Your Impermanent Loss alert has been set successfully")
         return next()
     }
