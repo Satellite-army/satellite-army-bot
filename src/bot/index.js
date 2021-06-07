@@ -34,7 +34,7 @@ bot.on('text', getUserData, async (ctx, next) => {
         return next()
     }
 
-    if (ctx.message.text.toLowerCase().includes('IL sample alert')) {
+    if (ctx.message.text.toLowerCase().includes('il sample alert')) {
         await ctx.reply("SOL/RAY pool currently has 1% of IL!")
         return next()
     }
@@ -43,7 +43,13 @@ bot.on('text', getUserData, async (ctx, next) => {
         await ctx.reply("scam.xyz pool has been compromised! Withdraw your funds!")
         return next()
     }
-    
+
+    if (ctx.message.text.toLowerCase().includes('welcome sample')) {
+        await ctx.reply("Welcome! This is the satellite.army bot.")
+        await ctx.reply("You have setup 1 Impermanent Loss alert.")
+        return next()
+    }
+
     // Using context shortcut
     console.log({ u: ctx._user, m: ctx.message })
     await ctx.reply(`${ctx._user.first_name}, soon a lot of functions for you!`)
