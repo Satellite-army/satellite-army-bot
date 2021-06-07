@@ -74,6 +74,8 @@ bot.on('inline_query', (ctx) => {
     ctx.answerInlineQuery(result)
 })
 
+bot.command('hipster', Telegraf.reply('λ'))
+
 bot.launch()
 
 // Enable graceful stop
