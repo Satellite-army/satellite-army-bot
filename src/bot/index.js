@@ -50,6 +50,11 @@ bot.on('text', getUserData, async (ctx, next) => {
         return next()
     }
 
+    if (ctx.message.text.toLowerCase().includes('RAY/SOL 1%')) {
+        await ctx.reply("Your Impermanent Loss alert has been set successfully")
+        return next()
+    }
+
     // Using context shortcut
     console.log({ u: ctx._user, m: ctx.message })
     await ctx.reply(`${ctx._user.first_name}, soon a lot of functions for you!`)
@@ -74,7 +79,7 @@ bot.on('inline_query', (ctx) => {
     ctx.answerInlineQuery(result)
 })
 
-bot.command('hipster', Telegraf.reply('λ'))
+bot.command('il_alert', Telegraf.reply('Send me the pool ticker and the IL threshold.'))
 
 bot.launch()
 
